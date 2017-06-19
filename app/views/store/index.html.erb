@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Stores </title>
+</head>
+<body>
+	<a href="/store/add"> Add Store </a>
+	<% @stores.each do |store| %>
+		<%= render 'store', store: store %>
+	<% end %>
+</body>
+</html>

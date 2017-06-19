@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+  <html lang='en-US'>
+
+    <body>
+      <div class="container">
+        <div class="row">
+           <h2 class="col s12">SIGN UP</h2>
+           <form class="col s12" method="POST" action='signup'>
+             <!-- <div class="row">
+               <p>
+                <input name="role" type="radio" id="buyer" />
+                <label for="buyer">Buyer</label>
+                <input name="role" type="radio" id="seller" />
+                <label for="seller">Seller</label>
+              </p>
+             </div> -->
+            <div class="row">
+             <div class="input-field col s12 disabled selected">
+                <select name="role" required="true">
+                  <option value="customer">Signup as a Customer</option>
+                  <option value="seller">Signup as a Seller</option>
+                </select>
+                <label>Choose your Signup option</label>
+              </div>
+            </div>
+
+             <div class="row">
+               <div class="input-field col s6">
+                 <input id="name" type="text" class="validate" name="name" required="true">
+                 <label for="name">Full Name</label>
+               </div>
+             </div>
+
+             <div class="row">
+               <div class="input-field col s6">
+                 <input id="email" type="email" class="validate" name="email" required="true">
+                <label for="email" data-error="wrong" data-success="right">Email</label>
+               </div>
+             </div>
+
+
+             <div class="row">
+               <div class="input-field col s6">
+                 <input id="txtNewPassword" type="password" class="validate" name="password" required="true">
+                 <label for="txtNewPassword">Password</label>
+               </div>
+             </div>
+
+
+             <div class="row">
+               <div class="input-field col s6">
+                 <input id="txtConfirmPassword" type="password" class="validate" name="password" required="true">
+                 <label for="txtConfirmPassword">Confirm Password</label>
+               </div>
+             </div>
+
+             <div class="row">
+               <div class="input-field col s6">
+                 <input id="phone" type="number" class="validate" min='1000000000' max='9999999999' name="phone" required="true">
+                 <label for="phone">Phone Number</label>
+               </div>
+             </div>
+
+             <div class="row">
+               <div class="input-field col s6">
+                 <input id="submit" type="submit" value="Register">
+               </div>
+             </div>
+           </form>
+         </div>
+      </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.js"></script> 
+<script>
+        $(document).ready(function() {
+          $('select').material_select();
+        });
+      $(function() {
+          $("#txtConfirmPassword").keyup(function() {
+              var password = $("#txtNewPassword").val();
+              $("#divCheckPasswordMatch").html(password == $(this).val() ? "Passwords match." : "Passwords do not match!");
+          });
+          });
+</script>
+    </body>
+  </html>
