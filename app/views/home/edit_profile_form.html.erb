@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Profile </title>
+  <style type="text/css">
+      
+      .navbar-fixed
+      { 
+        height: 150px;
+      }
+      .nav-wrapper
+      {
+        max-height:50px;
+      }
+button[type="submit"]
+{
+  float:center;
+  margin-left: 30%;
+  margin-bottom: 10%;
+  
+}
+     
+     .head img {
+  border-radius:5%;
+  -webkit-border-radius:20%;
+  -o-border-radius:5%;
+  -moz-border-radius:20%;
+  border:6px solid rgba(221, 218, 215, 0.23);
+}
+ .btn-floating
+  {
+      float: right;
+      margin-right: 2%;
+}
+  .row{
+       
+        padding-bottom: 0px;
+        padding-top: 5px;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+  .dropdown-button:hover
+  {
+        color: red;
+      }
+    .login-form
+   {
+  background:#fff;
+  width:40%;
+  margin:9% auto 4% auto;
+  position: relative;
+}
+      #pin{
+          color: black;
+      }
+      .tag2
+      {
+    font-family: Adobe Gothic Std B;
+    color: #060606  ;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    
+   }
+      .logo
+      {
+        
+        height:50px;
+      }
+      .side-nav{
+        top:20;
+      }
+      body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  .input-field label {
+     color:#000000;
+   }
+  main {
+    flex: 1 0 auto;
+  }
+     
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 30px;
+    line-height: 33px;
+}
+#sidenav-overlay{
+  z-index: 0;
+}
+.profile
+{
+  margin-left: 10%;
+  padding-bottom: 10%;
+}
+
+      </style>
+
+</head>
+<body>
+
+  <% if @profile %>
+    <% address = @profile.address %>
+    <% city = @profile.city %>
+    <% pin = @profile.pin %>
+    <% photo = @profile.avatar %>
+    <% gstin = @profile.gstin %>
+    <% aadhar_no = @profile.aadhar_no %>
+  <% else %>
+    <% photo = '/images/profile.png' %>
+  <% end %>
+
+  <div class="login-form">
+      <form class="col s12" action="/profile/edit/confirm" method="post" enctype="multipart/form-data">
+        <h1 class="tag2">PERSONAL INFORMATION</h1><br>
+         <!-- <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+      </a> -->
+        <div class="display_photo">
+          <img src="<%= photo %>">
+        </div>
+        <div class="row ">
+           <div class="input-field col s12 ">
+            <input id="pic" name="photo" type="file" class="validate"><br>
+           <label for="pic" ><br>Upload your image</label>
+          </div>
+          </div>   
+          <br><br>
+         <div class="row">
+            <div class="input-field col s12">
+              <input  id="`name" name="name" type="text" class="validate" value="<%= current_user.name %>">
+             <label for="name">FULL NAME</label>
+            </div>
+           </div>
+        
+     
+         <div class="row">
+          <div class="input-field col s12">
+           <input id="number" type="number" name="phone" class="validate" value="<%= current_user.phone %>">
+           <label for="number" data-error="wrong" data-success="right">MOBILE NUMBER</label>
+           </div>
+         </div>
+
+         <div class="row">
+          <div class="input-field col s12">
+           <input id="address" type="text" name="address" class="validate" value="<%= address %>">
+           <label for="address" data-error="wrong" data-success="right">ADDRESS</label>
+          </div>
+         </div>
+
+           <div class="row">
+          <div class="input-field col s12">
+           <input id="city" name="city" type="text" class="validate" value="<%= city %>">
+            <label for="city" >CITY</label>
+          </div>
+          </div>   
+
+          <div class="row">
+           <div class="input-field col s12">
+           <input id="pin" name="pin" type="number" class="validate" value="<%= pin %>">
+           <label for="pin" >PIN</label>
+          </div>
+          </div> 
+
+          <div class="row">
+           <div class="input-field col s12">
+           <input id="gstin" name="gstin" required="true" type="number" class="validate" value="<%= gstin %>">
+           <label for="gstin"> GSTIN </label>
+          </div>
+          </div> 
+
+          <div class="row">
+           <div class="input-field col s12">
+           <input id="aadhar_no" name="aadhar_no" required="true" type="number" class="validate" value="<%= aadhar_no %>">
+           <label for="aadhar_no"> Aadhar Number </label>
+          </div>
+          </div>   
+          
+          <div>
+            <br><br>
+          <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Save changes
+    <i class="material-icons right">done_all</i>
+  </button>
+</div>
+
+    </form>
+  </div>
+
+</body>
+</html>

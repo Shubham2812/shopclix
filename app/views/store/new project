@@ -1,0 +1,11 @@
+ng new test
+ng server
+ng generate component com OR ng g c com
+
+
+add store
+
+aadhar number OR photo
+(gst number)
+
+product form me store ka name, brand ka name

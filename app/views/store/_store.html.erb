@@ -1,9 +1,14 @@
 <div class="card small">
           <div class="card-image">
-              <img src="">
+              <img src="<%= store.avatar %>">
             </div>
             <div class="card-content">
-              <p>Store 4</p>
+              <p> <%= store.name %> </p>
+              <p> <%= store.category %> </p>
+
+              <a href="/store/edit/<%= store.id %>" class="btn-floating btn-large red">
+                <i class="large material-icons">mode_edit</i>
+              </a>
             </div>
             <div class="card-action">
               <a href="/store/<%= store.id %>/products">Products</a>

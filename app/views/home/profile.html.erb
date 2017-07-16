@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Profile </title>
+<style type="text/css">
+      
+      .navbar-fixed
+      { 
+        height: 150px;
+      }
+      .nav-wrapper
+      {
+        max-height:50px;
+      }
+button[type="submit"]
+{
+  float:center;
+  margin-left: 30%;
+  margin-bottom: 10%;
+  
+}
+     
+     .head img {
+  border-radius:5%;
+  -webkit-border-radius:20%;
+  -o-border-radius:5%;
+  -moz-border-radius:20%;
+  border:6px solid rgba(221, 218, 215, 0.23);
+}
+ .btn-floating
+  {
+      float: right;
+      margin-right: 2%;
+}
+  .row{
+       
+        padding-bottom: 0px;
+        padding-top: 5px;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+  .dropdown-button:hover
+  {
+        color: red;
+      }
+    .login-form
+   {
+  background:#fff;
+  width:40%;
+  margin:9% auto 4% auto;
+  position: relative;
+}
+      #pin{
+          color: black;
+      }
+      .tag2
+      {
+    font-family: Adobe Gothic Std B;
+    color: #060606  ;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    
+   }
+      .logo
+      {
+        
+        height:50px;
+      }
+      .side-nav{
+        top:20;
+      }
+      body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  .input-field label {
+     color:#000000;
+   }
+  main {
+    flex: 1 0 auto;
+  }
+     
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 30px;
+    line-height: 33px;
+}
+#sidenav-overlay{
+  z-index: 0;
+}
+.profile
+{
+  margin-left: 10%;
+  padding-bottom: 10%;
+}
+
+      </style>
+</head>
+<body class="light-blue lighten-5">
+  <% name = current_user.name %>
+  <% phone = current_user.phone %>
+	<% email = current_user.email %>
+
+  <% if @profile %>
+		<% address = @profile.address %>
+		<% city = @profile.city %>
+		<% pin = @profile.pin %>
+    <% photo = @profile.avatar %>
+    <% gstin = @profile.gstin %>
+		<% aadhar_no = @profile.aadhar_no %>
+	<% else %>
+		<% photo = '/images/profile.png' %>
+	<% end %>
+
+
+  <!-----start-main---->
+      <div class="login-form">
+      <!--<div class="head">
+            <img src="images/final.png" alt=""/>
+            
+            
+     </div>
+   -->
+        
+       <h1 class="tag2">PERSONAL INFORMATION</h1><br>
+       <a href="/profile/edit" class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+      </a>
+
+       <div class="col s12 m8 offset-m2 l6 offset-l3">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s5">
+              <img src="<%= photo %>" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s5">
+              <span class="black-text">
+               <%= name %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+            
+        
+          <div class="profile">
+            
+            MOBILE NUMBER: <%= phone %>
+           
+           </div>
+         
+           <div class="profile">
+            
+            ADDRESS: <%= address %>
+           
+           </div>
+
+           <div class="profile">
+            
+            CITY: <%= city %>
+           
+           </div> 
+
+           <div class="profile">
+            
+            PIN: <%= pin %>
+           
+           </div> 
+
+           <div class="profile">
+            
+            EMAIL: <%= email %>
+           
+           </div>
+
+           <div class="profile">
+            
+            GSTIN: <%= gstin %>
+           
+           </div>
+
+           <div class="profile">
+            
+            Aadhar Number: <%= aadhar_no %>
+           
+           </div>
+  </div>
+</body>
+</html>

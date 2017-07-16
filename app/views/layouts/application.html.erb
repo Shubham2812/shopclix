@@ -70,7 +70,7 @@
     height: 36px;
     color: red;
     background-color: white;
-    background-image: url('searchicon.png');
+    /*background-image: url('searchicon.png');*/
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -140,14 +140,16 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
                                   <li><a href="/" style="font-size:11px;">About Us</a></li>
                                   <li><a href="/" style="font-size:11px;">Careers</a></li>
                                   <li><a href="/" style="font-size:11px;">Track Order</a></li>
+                                  <li><a href="/team" style="font-size:11px;">Team</a></li>
+
                                   <% if user_signed_in? %>
                                   	<% if current_user.role == 'seller' %>
 	                                  	<li><a href="/products" style="font-size:11px;">Products</a></li>
 	                                  	<li><a href="/stores" style="font-size:11px;">Stores</a></li>
-	                                <% end %>
+	                                  <% end %>
 	                                
-	                                <li><a href="/profile" style="font-size:11px;">Profile</a></li>
-	                                <li><a href="/signout" style="font-size:11px;">Logout</a></li>
+  	                                <li><a href="/profile" style="font-size:11px;">Profile</a></li>
+  	                                <li><a href="/signout" style="font-size:11px;">Logout</a></li>
 
                                   <% else %>
                                   	<li><a href="/signup" style="font-size:11px;">Sign Up</a></li>
@@ -160,15 +162,18 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
                     <div class="row">
                           <div class="col s12">
                           <div class="col s3" >
-                                <div class="col s12 "><img class="logo" src="logo.png"  ></div>
+                                <div class="col s12 "><img class="logo" src="/logo.png"  ></div>
                           </div>
                               <div class="col s6">
                               <form>
-                                  <input type="text" name="search" placeholder="Search..">
+                                  <input type="text" name="search" id="search_form" placeholder="Search..">
                               </form>
+                              <div id="search_results">
+    
+                              </div>
                               </div>
                               <div class="col s3">
-                                 <a class="waves-effect white black-text btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i><b> &nbsp;cart</b></a>
+                                 <a href="/cart" class="waves-effect white black-text btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i><b> &nbsp;cart</b></a>
                               </div>
                           </div>
                     </div>
@@ -305,12 +310,69 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     </div>
     
     <% if flash[:notice] %>
-    	<br>
-    	<%= flash[:notice] %>
+      <% notice = flash[:notice] %>
+    	<script type="text/javascript">
+        noty({
+          text: '<%= notice %>', 
+          type: 'alert'
+        });
+      </script>
     <% end %>
 
 <%= yield %>
 
+<footer class="page-footer light-blue darken-2">
+      <div class="container">
+          <div class="row" >
+              <div class="col l4 s12">
+                  <ul>
+                      <li><p class="cyan-text text-lighten-4" style="font-size:20px;"><b>HELP</b></p></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Payments</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Saved Cards</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Shipping</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Cancellation and Returns</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Report Infringement</a></li>
+                  </ul>
+              </div>
+              <div class="col l3 s12">
+                  <ul>
+                      <li><p class="cyan-text text-lighten-4" style="font-size:20px;"><b>SHOPCLIX</b></p></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Careers</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Stories</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Press</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Sell on Shopclix</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Terms of Use</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Security</a></li>
+                     
+                  </ul>
+              </div>
+              <div class="col l5  s12">
+                  <div class="grey-text text-lighten-3"><h5 class="cyan-text text-lighten-4" style="font-size:20px;"><b>ABOUT US</b></h5>
+                      <p> Shopclix is an ecommerce website where buyer and seller can contact directly only for better mutual understanding. We provide you a complete help of getting you online and sell your products. Our focus is Building an Online Brand for every Indian Retailer and get them on the cloud. <a href="">Read More</a></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col s12">
+              <div class="footer-copyright center">
+                  <div class="container">
+                    
+                      © SHOPCLIX
+                      
+                  <div class="right">
+                         <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                          <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+                          <i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i>
+                  </div>
+                  </div>
+              </div>
+          </div>
+     </div>
+  </footer>
+  
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.js"></script> 
 <script type="text/javascript">
     $('.dropdown-button').dropdown({
@@ -323,6 +385,75 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
           alignment: 'left' // Displays dropdown with edge aligned to the left of button
         }
       );
+    var search_form = document.getElementById('search_form');
+  if(search_form)
+  { search_form.addEventListener('keydown', function(){
+      console.log('hello');
+      var search_results = document.getElementById('search_results')
+      if(search_form.value.length > 0)
+      {
+        var url = '/search'
+        var info = {
+          search: search_form.value
+        }
+
+        search_results.style.display = 'block'
+
+        $.ajax({
+          url: url,
+          method: 'post',
+          data: info,
+          success: function(search_items){
+            console.log(search_items);
+            while (search_results.firstChild) 
+            { search_results.removeChild(search_results.firstChild);
+            }
+
+            for(var i=0; i<search_items.length; i++)
+            { var child = document.createElement('div')
+            
+              var text = document.createTextNode(search_items[i].name)
+
+              child.appendChild(text);
+              search_results.appendChild(child)
+              child.addEventListener('click', function(){
+                search_form.value = this.innerHTML
+              })
+            }
+          },
+          error: function(){
+            alert("Error")
+          }
+        })
+      }
+      else
+      {
+        search_results.style.display = 'none'
+      }
+    })
+  }
+
+  // search_form.addEventListener('focus', function(){
+  //  this.style.border = '0px';
+  //  console.log("focussed")
+  // })
+
+  var search_results = document.getElementById('search_results')
+  if(search_results)
+  { 
+    search_results.addEventListener('click', function(){
+      this.style.display = 'none'
+    })
+
+    document.body.addEventListener('click', function(event){
+      var search_results = document.getElementById('search_results')  
+      var x = $("#search_results").position();
+
+      if((event.clientX < x.left || event.clientX > x.left + search_results.clientWidth) || (event.clientY < x.top || event.clientY > x.top + search_results.clientHeight))
+      search_results.style.display = 'none'
+      
+    })
+  }
 </script>
 </body>
 </html>

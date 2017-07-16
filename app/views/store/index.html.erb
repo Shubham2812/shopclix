@@ -2,11 +2,20 @@
 <html>
 <head>
 	<title> Stores </title>
+	<style>
+		.stores_container{
+			width: 70%;
+			margin: auto;
+		}
+	</style>
 </head>
 <body>
-	<a href="/store/add"> Add Store </a>
+	<br>
+	<%= link_to 'Add Store', '/store/add' %>
+	<div class="stores_container">
 	<% @stores.each do |store| %>
 		<%= render 'store', store: store %>
 	<% end %>
+	</div>
 </body>
 </html>

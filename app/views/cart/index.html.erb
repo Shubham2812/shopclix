@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Cart </title>
+</head>
+<body>
+	<% @items.each do |item| %>
+		<%= render 'product', product: item %>
+	<% end %>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="left_column_div">
+        <div class="section">
+          <img class="responsive-img col s12 m6 l3" src="<%= product.avatar %>"></img>
+        </div>
+      </div>
+        <div class="middle_column_div col s12 m6 center-align">
+
+
+          <h2 class="center-align"><%= product.name %></h2>
+          <div class="divider"></div>
+          <div class="section">
+            <strong class="left-align" id="price_of_product"><span id="price_of_productPrice"><%= product.price %> &nbsp &nbsp &nbsp &nbsp</span><span id="in_stock">In Stock</span></strong>
+          </div>
+          <div class="divider"></div>
+          <div class="section"><%= product.color %></div>
+          <div class="section"><%= product.description %></div>
+          <div class="divider"></div>
+        </div>
+    <div class="right_column_div center-align">
+      <div class="section" id="buy_now_for_medium">
+        <a class="waves-effect waves-light btn"><i class="material-icons left">attach_money</i>Buy Now</a>
+      </div>
+      <div class="section" id="add_cart_for_medium">
+        <a href="/cart/remove/<%= product.id %>" class="waves-effect waves-light btn"><i class="material-icons left">add_shopping_cart</i>Remove From cart</a>
+      </div>
+      <div class="divider"></div>
+    </div>
+</div>

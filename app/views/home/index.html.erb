@@ -34,477 +34,59 @@
     </ul>
     </div>
     </div>
+
   <div class="container">
     
     
       <h5><b>Electronics Stores </b></h5>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 1</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 2</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 3</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 4</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
+       <div class="col l3 s6">
+        <% @electronics.each do |store| %>
+          <%= render 'store', store: store %>
+        <% end %>
+        </div>
             
   
     
       <h5><b>Men Clothing Stores  </b></h5>
       <div class="col l3 s6">
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 1</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
+        <% @mens.each do |store| %>
+          <%= render 'store', store: store %>
+        <% end %>
       </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 2</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 3</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 4</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
             
   
     
       <h5><b>Women Clothing Stores  </b></h5>
       <div class="col l3 s6">
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 1</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 2</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 3</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 4</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-    
-      <h5><b>Appliances Stores  </b></h5>
-      <div class="col l3 s6">
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 1</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 2</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 3</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 4</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
+
+        <% @women.each do |store| %>
+          <%= render 'store', store: store %>
+        <% end %>
       </div>
       
       <h5><b>Kids Stores  </b></h5>
       <div class="col l3 s6">
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 1</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
+        <% @kids.each do |store| %>
+          <%= render 'store', store: store %>
+        <% end %>
       </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 2</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 3</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 4</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
+
       <h5><b>Furniture Stores  </b></h5>
       <div class="col l3 s6">
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 1</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 2</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 3</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 4</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
+        <% @furniture.each do |store| %>
+          <%= render 'store', store: store %>
+        <% end %>
       </div>
         
       <h5><b>Books Stores  </b></h5>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 1</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 2</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 3</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      </div>
-      
-      <div class="card small">
-          <div class="card-image">
-              <img src="">
-            </div>
-            <div class="card-content">
-              <p>Store 4</p>
-            </div>
-            <div class="card-action">
-              <a href="#">Products</a>
-              <i class="material-icons">thumb_up</i>
-              <i class="material-icons">thumb_down</i>
-            </div>
-      
-      </div>
+        <div class="col l3 s6">
+        <% @books.each do |store| %>
+          <%= render 'store', store: store %>
+        <% end %>
+        </div>
+
   </div>
-  
-  
-  <footer class="page-footer light-blue darken-2">
-      <div class="container">
-          <div class="row" >
-              <div class="col l4 s12">
-                  <ul>
-                      <li><p class="cyan-text text-lighten-4" style="font-size:20px;"><b>HELP</b></p></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Payments</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Saved Cards</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Shipping</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Cancellation and Returns</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">FAQ</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Report Infringement</a></li>
-                  </ul>
-              </div>
-              <div class="col l3 s12">
-                  <ul>
-                      <li><p class="cyan-text text-lighten-4" style="font-size:20px;"><b>SHOPCLIX</b></p></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Careers</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Stories</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Press</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Sell on Shopclix</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Terms of Use</a></li>
-                      <li><a class="grey-text text-lighten-3" href="#!">Security</a></li>
-                     
-                  </ul>
-              </div>
-              <div class="col l5  s12">
-                  <div class="grey-text text-lighten-3"><h5 class="cyan-text text-lighten-4" style="font-size:20px;"><b>ABOUT US</b></h5>
-                      <p> Shopclix is an ecommerce website where buyer and seller can contact directly only for better mutual understanding. We provide you a complete help of getting you online and sell your products. Our focus is Building an Online Brand for every Indian Retailer and get them on the cloud. <a href="">Read More</a></p>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col s12">
-              <div class="footer-copyright center">
-                  <div class="container">
-                    
-                      © SHOPCLIX
-                      
-                  <div class="right">
-                         <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                          <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                          <i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i>
-                  </div>
-                  </div>
-              </div>
-          </div>
-     </div>
-  </footer>
-  
+</body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.js"></script> 
 <script type="text/javascript">
     $('.dropdown-button').dropdown({

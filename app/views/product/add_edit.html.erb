@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Add Product </title>
+	<style type="text/css">
+      
+      
+button[type="submit"]
+{
+  float:center;
+  margin-left: 30%;
+  margin-bottom: 10%;
+  
+}
+
+#color{
+  width: 30%;
+
+}
+     
+     
+
+ .btn-floating
+  {
+      float: right;
+      margin-right: 2%;
+
+}
+  
+    .login-form
+   {
+  background:#fff;
+  width:40%;
+  margin:9% auto 4% auto;
+  position: relative;
+}
+      #pin{
+          color: black;
+
+      }
+      .tag2
+      {
+    font-family: Adobe Gothic Std B;
+    color: #060606  ;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    
+   }
+      .logo
+      {
+        
+        height:50px;
+      }
+      .side-nav{
+        top:20;
+      }
+      
+      body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  .input-field label {
+     color:#000000;
+   }
+
+  main {
+    flex: 1 0 auto;
+  }
+     
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 30px;
+    line-height: 33px;
+}
+#sidenav-overlay{
+  z-index: 0;
+}
+
+  
+      </style>
+</head>
+<body class="light-blue lighten-5">
+
+  <% if @product %>
+    <% name = @product.name %>
+    <% price = @product.price %>
+    <% color = @product.color %>
+    <% description = @product.description %>
+    <% photo = @product.avatar %>
+  <% else %>
+    <% photo = '/images/product.png' %>
+  <% end %>
+
+	<div class="login-form">
+      <!--<div class="head">
+            <img src="images/final.png" alt=""/>
+            
+            
+     </div>
+   -->
+        
+      <form class="col s12" action="/product/add/confirm" method="post" enctype="multipart/form-data">
+
+        <h1 class="tag2">PRODUCT INFORMATION</h1><br>
+         <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+      </a>
+         <div class="display_photo">
+          <img src="<%= photo %>">
+        </div>
+         <div class="row ">
+           <div class="input-field col s12 ">
+            <input id="pic" name="photo" type="file" class="validate"><br>
+           <label for="pic" ><br>Upload image</label>
+          </div>
+          </div> 
+          <br><br> 
+         <div class="row">
+            <div class="input-field col s12">
+              <input  id="`name" name="name" type="text" class="validate" value="<%= name %>">
+             <label for="name">NAME OF PRODUCT</label>
+            </div>
+           </div>
+        
+          <% if @product %>
+            <input type="hidden" name="product_id" value="<%= @product.id %>">
+          <% end %>
+     
+         <div class="row">
+          <div class="input-field col s12">
+           <input id="number" name="price" type="number" class="validate" value="<%= price %>">
+           <label for="number" data-error="wrong" data-success="right">PRICE</label>
+           </div>
+         </div>
+
+        
+         <div class="row">
+          <div class="input-field col s12">
+           <input id="color" name="color" type="color" class="validate" value="<%= color %>">
+           <label for="color" data-error="wrong" data-success="right"><br>COLOR</label>
+          </div>
+         </div>
+         <br><br>
+          <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" name="description" class="materialize-textarea"></textarea>
+          <label for="textarea1">DESCRIPTION</label>
+        </div>
+           </div>
+
+           <div class="row">
+            <div class="input-field col s12">
+        <select name="store_id" required="true">
+          <option value="">Choose a Store</option>
+          <% @stores.each do |store| %>
+            <option value="<%= store.id %>"> <%= store.name %> </option>
+          <% end %>
+
+       </select>
+       <label>CATEGORY</label>
+        </div>
+          </div>
+          <div>
+            <br><br>
+          <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Save changes
+    <i class="material-icons right">done_all</i>
+  </button>
+</div>
+
+    </form>
+  </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.js"></script> 
+<script>
+        $(document).ready(function() {
+          $('select').material_select();
+        });
+</script>
+</body>
+</html>

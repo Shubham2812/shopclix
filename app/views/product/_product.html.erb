@@ -1,0 +1,20 @@
+<div class="card small">
+            <div class="card-image">
+              <img src="<%= product.avatar %>">
+            </div>
+            <div class="card-content">
+              <p> <%= product.name %></p>
+            </div>
+            <div class="card-action">
+              <a href="/products/show/<%= product.id %>">View Product</a>
+              <a href="/stores/show/<%= product.store.id %>">View Store</a>
+              <i class="material-icons">thumb_up</i>
+              <i class="material-icons">thumb_down</i>
+              <a href="/product/edit/<%= product.id %>" class="btn-floating btn-tiny red">
+                <i class="tiny material-icons">mode_edit</i>
+                </a>
+                <a href="/product/delete/<%= product.id %>" class="btn-floating btn-tiny red">
+                <i class="tiny material-icons">delete</i>
+                </a>
+            </div>
+      	</div>

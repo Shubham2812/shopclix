@@ -1,2 +1,22 @@
-<h1>Product#index</h1>
-<p>Find me in app/views/product/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Products </title>
+	<style>
+		.product_outer{
+	    	margin: auto;
+	     	width: 60%;
+     	}
+
+	</style>
+</head>
+<body>
+	<br>
+	<%= link_to 'Add Product', '/product/add' %>
+    <div class="product_outer">
+		<% @products.each do |product| %>
+			<%= render 'product', product: product %>
+		<% end %>
+	</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Confirm Email </title>
+</head>
+<body>
+	Verification of Email
+	Please enter the 4 digit One Time Password Sent to <%= @email %> to Verify You Account!
+	<form action="/confirm_signup" method="post">
+		<input type="number" name="entered_opt">
+		<input type="hidden" name="user_id" value="<%= @user_id %>">
+		<input type="hidden" name="otp" value="<%= @otp %>">
+		<input type="submit" name="submit" value="Verify">
+	</form>
+</body>
+</html>

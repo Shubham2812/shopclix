@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
 
-  get '/' => 'home#index'
+  
 
+  get '/' => 'home#index'
+  get '/team' => 'home#team'
+  get '/profile' => 'home#profile'
+  get '/profile/edit' => 'home#edit_profile_form'
+  post '/profile/edit/confirm' => 'home#edit_profile'
+  post '/search' => 'home#search'
   get '/signup' => 'authentication#signup'
-  post '/signup' => 'authentication#confirm_signup'
+  post '/signup' => 'authentication#confirm_email'
+  post '/confirm_signup' => 'authentication#confirm_signup'
 
   get '/signin' => 'authentication#signin'
   post '/signin' => 'authentication#confirm_signin'
@@ -11,11 +18,27 @@ Rails.application.routes.draw do
   get '/signout' => 'authentication#signout'
 
   get '/stores' => 'store#index'
-  get '/store/add' => 'store#add'
+  get '/stores/show/:store_id' => 'store#products'
+  get '/store/add' => 'store#add_edit'
+  get '/store/edit/:store_id' => 'store#add_edit'
+  post '/store/edit/:store_id/confirm' => 'store#add_edit_store'
+  post '/store/add/confirm' => 'store#add_edit_store'
   get '/store/:store_id/products' => 'store#products'
+  get '/store/delete/:store_id' => 'store#delete'
 
   get '/products' => 'product#index'
-  get '/product/add' => 'product#add'
+  get '/products/show/:product_id' => 'product#show'
+  get '/product/add' => 'product#add_edit'
+  get '/product/edit/:product_id' => 'product#add_edit'
+  post '/product/edit/:product_id/confirm' => 'product#add_edit_product'
+  post '/product/add/confirm' => 'product#add_edit_product'
+  get '/product/delete/:product_id' => 'product#delete'
+
+  get '/cart' => 'cart#index'
+  get '/cart/add/:product_id' => 'cart#add'
+  get '/cart/remove/:product_id' => 'cart#remove'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
