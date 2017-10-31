@@ -25,7 +25,10 @@
  }
 
  #search_results{
-	width: 258px;
+	width: 96%;
+	position: relative;
+	left: 21px;
+	z-index: 20;
 }
 
 #search_results > div{
@@ -43,5 +46,22 @@
  	cursor: pointer;
  	background-color: cyan;
 }
+.card {
+	width: 100%;
+
+
+}
+
+.add_product
+     	{
+     		display: flex;
+     		justify-content: space-around;
+     		align-items: center;
+     	}
+
+
+     	.store_image{
+     		height: 300px;
+     	}
 
  

@@ -4,18 +4,24 @@
 	<title> Stores </title>
 	<style>
 		.stores_container{
-			width: 70%;
+			/*width: 70%;*/
 			margin: auto;
 		}
 	</style>
 </head>
 <body>
 	<br>
-	<%= link_to 'Add Store', '/store/add' %>
 	<div class="stores_container">
+	<div class="row">
 	<% @stores.each do |store| %>
 		<%= render 'store', store: store %>
 	<% end %>
+	<div class="col m4 s12">
+		    <div class="card medium add_product">
+				<a href="/store/add"> <img src="/images/add.png"> </a>
+            
+      	</div></div>
+	</div>
 	</div>
 </body>
 </html>

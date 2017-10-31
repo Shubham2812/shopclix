@@ -15,6 +15,10 @@ class AuthenticationController < ApplicationController
 				seller.phone = params[:phone]
 				seller.role = 'seller'
 				seller.save
+				# flash[:notice] = "Signup Successful"
+				# session[:user_id] = seller.id
+				# session[:role] = seller.role.to_s
+				# return redirect_to '/'
 				@user_id = seller.id
 				otp = rand(9000) + 1000
 				@otp = otp
@@ -33,6 +37,11 @@ class AuthenticationController < ApplicationController
 					:phone => params[:phone],
 					:role => params[:role]
 				)
+
+				# flash[:notice] = "Signup Successful"
+				# session[:user_id] = customer.id
+				# session[:role] = user.role.to_s
+				# return redirect_to '/'
 				@user_id = customer.id
 				otp = rand(9000) + 1000
 				@otp = otp

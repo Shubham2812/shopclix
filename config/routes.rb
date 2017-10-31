@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
-  
-
   get '/' => 'home#index'
   get '/team' => 'home#team'
   get '/profile' => 'home#profile'
   get '/profile/edit' => 'home#edit_profile_form'
   post '/profile/edit/confirm' => 'home#edit_profile'
   post '/search' => 'home#search'
+  get '/search/result' => 'home#search_result' 
   get '/signup' => 'authentication#signup'
   post '/signup' => 'authentication#confirm_email'
   post '/confirm_signup' => 'authentication#confirm_signup'
@@ -37,7 +36,6 @@ Rails.application.routes.draw do
   get '/cart' => 'cart#index'
   get '/cart/add/:product_id' => 'cart#add'
   get '/cart/remove/:product_id' => 'cart#remove'
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

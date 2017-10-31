@@ -39,8 +39,15 @@
     
     
       <h5><b>Electronics Stores </b></h5>
-       <div class="col l3 s6">
+       <div class="row">
         <% @electronics.each do |store| %>
+          <%= render 'store', store: store %>
+        <% end %>
+        </div>
+
+        <h5><b>Appliances Stores </b></h5>
+       <div class="row">
+        <% @appliances.each do |store| %>
           <%= render 'store', store: store %>
         <% end %>
         </div>
@@ -48,8 +55,8 @@
   
     
       <h5><b>Men Clothing Stores  </b></h5>
-      <div class="col l3 s6">
-        <% @mens.each do |store| %>
+      <div class="row">
+        <% @men.each do |store| %>
           <%= render 'store', store: store %>
         <% end %>
       </div>
@@ -57,7 +64,7 @@
   
     
       <h5><b>Women Clothing Stores  </b></h5>
-      <div class="col l3 s6">
+      <div class="row">
 
         <% @women.each do |store| %>
           <%= render 'store', store: store %>
@@ -65,22 +72,29 @@
       </div>
       
       <h5><b>Kids Stores  </b></h5>
-      <div class="col l3 s6">
+      <div class="row">
         <% @kids.each do |store| %>
           <%= render 'store', store: store %>
         <% end %>
       </div>
 
+      <h5><b>Books Stores  </b></h5>
+        <div class="row">
+        <% @books.each do |store| %>
+          <%= render 'store', store: store %>
+        <% end %>
+        </div>
+
       <h5><b>Furniture Stores  </b></h5>
-      <div class="col l3 s6">
+      <div class="row">
         <% @furniture.each do |store| %>
           <%= render 'store', store: store %>
         <% end %>
       </div>
-        
-      <h5><b>Books Stores  </b></h5>
-        <div class="col l3 s6">
-        <% @books.each do |store| %>
+
+        <h5><b>Others  </b></h5>
+        <div class="row">
+        <% @others.each do |store| %>
           <%= render 'store', store: store %>
         <% end %>
         </div>

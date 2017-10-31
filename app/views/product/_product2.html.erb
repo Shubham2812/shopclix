@@ -17,13 +17,15 @@
           <div class="section"><%= product.description %></div>
           <div class="divider"></div>
         </div>
-    <div class="right_column_div center-align">
-      <div class="section" id="buy_now_for_medium">
-        <a class="waves-effect waves-light btn"><i class="material-icons left">attach_money</i>Buy Now</a>
-      </div>
-      <div class="section" id="add_cart_for_medium">
-        <a href="/cart/add/<%= product.id %>" class="waves-effect waves-light btn"><i class="material-icons left">add_shopping_cart</i>Add to cart</a>
-      </div>
-      <div class="divider"></div>
-    </div>
+        <% if current_user.role == 'customer' %>
+          <div class="right_column_div center-align">
+            <div class="section" id="buy_now_for_medium">
+              <a class="waves-effect waves-light btn"><i class="material-icons left">attach_money</i>Buy Now</a>
+            </div>
+            <div class="section" id="add_cart_for_medium">
+              <a href="/cart/add/<%= product.id %>" class="waves-effect waves-light btn"><i class="material-icons left">add_shopping_cart</i>Add to cart</a>
+            </div>
+            <div class="divider"></div>
+          </div>
+        <% end %>
 </div>

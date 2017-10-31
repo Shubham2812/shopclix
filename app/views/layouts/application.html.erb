@@ -17,27 +17,23 @@
       <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.css"  media="screen,projection"/>
       
       <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
+      <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+ -->
       <!--Import materialize.js-->
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.js"></script>
-
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.js"></script>
       <script src="https://use.fontawesome.com/e782fdb025.js"></script>
 
       <style type="text/css">
-      	.navbar-fixed{ 
-        	height: 150px;  
-      	}
-      
+      	.navbar-fixed
+      { height: 150px;  }
       .nav-wrapper{
         max-height:50px;
       }
       .row{
        
         padding-bottom: 0px;
-        padding-top: 5px;
+        padding-top: 0px;
         padding-left: 0px;
         padding-right: 0px;
       }
@@ -47,114 +43,503 @@
       
       .logo{
         
-        height:50px;
+        height:80px;
+        width: 200px;
       }
       .side-nav{
         top:20;
       }
+      .dropdown-content{
+    overflow-y: visible ;
+  }
+  
       body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-    }
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
-	  main {
-	    flex: 1 0 auto;
-	  }
-      input[type=text] {
-    width: 100%;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    height: 36px;
-    color: red;
-    background-color: white;
-    /*background-image: url('searchicon.png');*/
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
+  main {
+    flex: 1 0 auto;
+  }
+    #search_input {
+      width: 100%;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      height: 33px;
+      margin: 0px;
+      color: red;
+      background-color: white;
+      /*background-image: url('/images/search_icon.png');*/
+      /*background-position: 10px 10px; 
+      background-repeat: no-repeat;*/
+      padding: 12px 20px 12px 40px;
+      /*-webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;*/
+  }
 nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     height: 30px;
-    line-height: 33px;
+    line-height: 25px;
 }
 #sidenav-overlay{
   z-index: 0;
+}
+.drop{
+  min-width: 230px;
+
+}
+#men, #women{
+  min-width: 132px;
+  
+}
+.dropdown-content li{
+  min-height:40px; 
+}
+.dropdown-content li>a{
+  padding: 10px 8px;
+}
+
+#search_button{
+  height: 20px; 
+  position: relative;
+  left: 30px;
+  top: 7px;
+}
+
+#search_form{
+  display: flex;
 }
 
       </style>
 </head>
 <body>
-
-	<!--dropdown lists-->
-    <ul id="dropdown1" class=" dropdown-content">
-          <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-          <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-          <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+    <!--dropdown lists-->
+    <ul id="elect" class=" dropdown-content" >
+          <li><a class="dropdown-button2" href="#" data-activates="mobile" style="font-size:12px;">Mobile</a></li>
+          <li><a href="#" style="font-size:12px;">Mobile Accessories</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="laptop" style="font-size:12px;">Laptops</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="computer" style="font-size:12px;">Computer Peripherals</a></li>
+          <li><a href="#" style="font-size:12px;">Computer Accessories</a></li>
+          <li><a href="#" style="font-size:12px;">Tablets</a></li>
+          <li><a href="#" style="font-size:12px;">Wearables</a></li>
+          <li><a href="#" style="font-size:12px;">Home entertainment</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="tv" style="font-size:12px;">Television</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="camera" style="font-size:12px;">Camera</a></li>
+          <li><a href="#"  style="font-size:12px;">Network Components</a></li>
+          <li><a class="dropdown-button2" href="#" style="font-size:12px;">Others</a></li>
     </ul>
-    <ul id="dropdown2" class=" dropdown-content">
-          <li><a class="blue-text text-lighten-1" href="#!">four</a></li>
-          <li><a  class="blue-text text-lighten-1" href="#!">five</a></li>
-          <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+    <ul id="appliances" class=" dropdown-content">
+          <li><a class="dropdown-button2" href="#" data-activates="washing" style="font-size:12px;">Washing Machine</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="refer" style="font-size:12px;">Refrigerators</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="ac" style="font-size:12px;">Air Conditioners</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="geysers" style="font-size:12px;">Geysers</a></li>
+          <li><a  href="#"  style="font-size:12px;">Kitchen Appliances</a></li>
+          <li><a  href="#"  style="font-size:12px;">Small Appliances</a></li>
+          <li><a class="dropdown-button2" href="#" style="font-size:12px;">Others</a></li>
+          
     </ul>
-    <ul id="dropdown3" class=" dropdown-content">
-        <li><a class="blue-text text-lighten-1" href="#!">six</a></li>
-        <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-        <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+    <ul id="men" class=" dropdown-content" >
+        <li><a class="dropdown-button2" href="#" data-activates="mfoot" style="font-size:12px;">Footwear</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="mclothes" style="font-size:12px;">Clothing</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="mwatches" style="font-size:12px;">Watches</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="dropdown9" style="font-size:12px;">Accessories</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="dropdown9" style="font-size:12px;">Personal Care Appliances</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="dropdown9" style="font-size:12px;">Men's Grooming</a></li>
+          <li><a class="dropdown-button2" href="#" style="font-size:12px;">Others</a></li>
     </ul>
-    <ul id="dropdown4" class=" dropdown-content">
-        <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-        <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-        <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+    <ul id="women" class=" dropdown-content">
+        <li><a class="dropdown-button2" href="#" data-activates="wfootwear" style="font-size:12px;">Footwear</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="wclothes" style="font-size:12px;">Clothing</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="wwatches" style="font-size:12px;">Watches</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="dropdown9" style="font-size:12px;">Accessories</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="dropdown9" style="font-size:12px;">Personal Care Appliances</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="dropdown9" style="font-size:12px;">Beauty & Grooming</a></li>
+          <li><a class="dropdown-button2" href="#" data-activates="dropdown9" style="font-size:12px;">Jewellery</a></li>
+          <li><a class="dropdown-button2" href="#" style="font-size:12px;">Others</a></li>
     </ul>
-    <ul id="dropdown5" class=" dropdown-content">
-        <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-        <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-        <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+    <ul id="kids" class=" dropdown-content">
+        <li><a class="dropdown-button2" href="#" data-activates="wfot" style="font-size:12px;">Kid's Clothing</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfot" style="font-size:12px;">Kid's Footwear</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfot" style="font-size:12px;">School supplies</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfot" style="font-size:12px;">Toys</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfot" style="font-size:12px;">Baby Care</a></li>
+        <li><a class="dropdown-button2" href="#" style="font-size:12px;">Others</a></li>
     </ul>
-    <ul id="dropdown6" class=" dropdown-content">
-        <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-        <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-        <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+    <ul id="furn" class=" dropdown-content">
+        <li><a class="dropdown-button2" href="#" data-activates="wfot" style="font-size:12px;">Kitchen & Dining</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Furniture</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">House & Hardware</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Home Decor</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Lighting</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Others</a></li>
     </ul>
-    <ul id="dropdown7" class=" dropdown-content">
-        <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-        <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-        <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+    <ul id="books" class=" dropdown-content">
+        <li><a class="dropdown-button2" href="#" data-activates="novels" style="font-size:12px;">Novels</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Stationary</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Music</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Movies & TV Shows</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Musical Instruments</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Automobiles</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Sports</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Fitness Accessories</a></li>
+        <li><a class="dropdown-button2" href="#" data-activates="wfoot" style="font-size:12px;">Others</a></li>
     </ul>
+    
+    <div id="laptop" class="row drop dropdown-content">
+        <div class="col s12 m6">
+        <ul>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">HP</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Dell</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Lenovo</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Acer</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Apple</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sony</a></li>
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+          
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">LG</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Micromax</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Asus</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Xiaomi</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Toshiba</a></li>
+          </ul>
+    </div>
+    </div>
+    <div id="mobile" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sony</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">HTC</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Lenovo</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Samsung</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Apple</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Motorola</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Yureka</a></li>
+          
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Nokia</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Micromax</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">XOLO</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Xiaomi</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Panasonic</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Asus</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Intex</a></li>
+          
+    </ul>
+    </div>
+    </div>
+    <div id="tv" class="row drop dropdown-content">
+    <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sony</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Panasonic</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">LG</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Samsung</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sansui</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Micromax</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Kodak</a></li>
+          </ul>
+          </div>
+         <div class="col s12 m6">
+        <ul>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Phillips</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">BPL</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Onida</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Yureka</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Asus</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Intex</a></li>
+    </ul>
+    </div>
+    </div>
+    <div id="computer" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Dell</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">NOC</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">MSI</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">iBall</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">LG</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Motorola</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Yureka</a></li>
+          
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Nokia</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Micromax</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">XOLO</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Xiaomi</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Panasonic</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Asus</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Intex</a></li>
+          
+    </ul>
+    </div>
+    </div>
+    <div id="camera" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Canon</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sony</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">MSI</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">iBall</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">LG</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Motorola</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Yureka</a></li>
+          
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Nokia</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Micromax</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">XOLO</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Xiaomi</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Panasonic</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Asus</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Intex</a></li>
+          
+    </ul>
+    </div>
+    </div>
+    <div id="washing" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Samsung</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Whirlpool</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Godrej</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Intex</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">LG</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Onida</a></li>
+          
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sansui</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Haier</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Panasonic</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!"  style="font-size:12px;">Bosch</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">BPL</a></li>
+          
+          
+    </ul>
+    </div>
+    </div>
+    <div id="refer" class="row dropdown-content">
+      
+        <ul>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">LG</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sansui</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Samsung</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Whirlpool</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Godrej</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Kalvinator</a></li>
+        </ul>
+    </div>
+    <div id="ac" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">OGeneral</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Voltas</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Samsung</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Carier</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!"  style="font-size:12px;">LG</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sansui</a></li>
+          
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Hitachi</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Onida</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Lloyd</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Bluestar</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Daikin</a></li>
+        </ul>
+    </div>
+    </div>
+    <div id="geysers" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">KenStar</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Olympus</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Crompton</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Hindware</a></li>
+          
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Bajaj</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Usha</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Havells</a></li>
+        </ul>
+    </div>
+    </div>
+<div id="mfoot" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Reebok</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Adidas</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Puma</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Fila</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Hush Puppies</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Zara</a></li>
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">LeeCooper</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Red Tape</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Nike</a></li>
+        </ul>
+    </div>
+    </div>
+    <div id="mclothes" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Peter England</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Flying Machine</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">John Player</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Reebok</a></li>
+          
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Adidas</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Woodland</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Duke</a></li>
+        </ul>
+    </div>
+    </div>
+    <div id="mwatches" class="dropdown-content">
+      
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Fastrack</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">G Shock</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Titan</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Timex</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Titan</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sonata</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Rolex</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Rado</a></li>
+        </ul>
+    </div>
+    <div id="wfootwear" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Catwalk</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sole Threads</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Nine West</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Havaianas</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Gliders</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Timberland</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">woodland</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Liberty</a></li>
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">United Colors of Benetton</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Tiptopp</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Bata</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Mochi</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Khadims</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Lakahni</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">CityWalk</a></li>
+        </ul>
+    </div>
+    </div>
+    <div id="wclothes" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Levis</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Park Avenue</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">John Player</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Reebok</a></li>
+          
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Adidas</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Woodland</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Duke</a></li>
+        </ul>
+    </div>
+    </div>
+    <div id="wwatches" class="dropdown-content">
+      
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Fastrack</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Casio</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Titan</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Fossil</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Sonata</a></li>
+        </ul>
+    </div>
+    <div id="novels" class="row drop dropdown-content">
+      <div class="col s12 m6">
+        <ul>
+         <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Fiction</a></li>
+          <li><a  class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Non fiction </a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Romantic </a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Tradedy</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Literature </a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Social science</a></li>
+          
+        </ul>
+        </div>
+        <div class="col s12 m6">
+        <ul>
+        <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Thrilling</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Philosophy </a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Motivational </a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Science and tech</a></li>
+          <li><a class="blue-text text-lighten-1" href="#!" style="font-size:12px;">Art and culture</a></li>
+        </ul>
+    </div>
+    </div>
     <div class="navbar-fixed">
       <nav class="nav-extended light-blue darken-4" >
           <div class="nav-wrapper light-blue darken-4">
               <div class="row">
-                  <!--<div class="col s3" >
-                      <div class="col s12 "><img class="logo" src="logo.png"  ></div>
-                  </div>-->
               <div class="col s12">
                       <div class="row" >
                           <div class="col s12"style="height:12px;">
-                              <ul id="nav-mobile" class="right hide-on-med-and-down" >
-                                  <li><a href="/" style="font-size:11px;">Home</a></li>
-                                  <li><a href="/" style="font-size:11px;">About Us</a></li>
-                                  <li><a href="/" style="font-size:11px;">Careers</a></li>
-                                  <li><a href="/" style="font-size:11px;">Track Order</a></li>
-                                  <li><a href="/team" style="font-size:11px;">Team</a></li>
-
-                                  <% if user_signed_in? %>
-                                  	<% if current_user.role == 'seller' %>
-	                                  	<li><a href="/products" style="font-size:11px;">Products</a></li>
-	                                  	<li><a href="/stores" style="font-size:11px;">Stores</a></li>
-	                                  <% end %>
-	                                
-  	                                <li><a href="/profile" style="font-size:11px;">Profile</a></li>
-  	                                <li><a href="/signout" style="font-size:11px;">Logout</a></li>
+                              <ul id="nav-mobile">
+                              <div class="right hide-on-med-and-down" >
+                                  <!-- <li><a href="badges.html" style="font-size:11px;">Careers</a></li> -->
+                                  <!-- <li><a href="sass.html" style="font-size:11px;">Track Order</a></li> -->
+                                </div>
+                                <div class="right">
+                                <li><a href="/" style="font-size:11px;">Home</a></li>
+                                  <li><a href="badges.html" style="font-size:11px;">About Us</a></li>
+                                <% if user_signed_in? %>
+                                    <% if current_user.role == 'seller' %>
+                                      <li><a href="/products" style="font-size:11px;">Products</a></li>
+                                      <li><a href="/stores" style="font-size:11px;">Stores</a></li>
+                                    <% end %>
+                                  
+                                    <li><a href="/profile" style="font-size:11px;">Profile</a></li>
+                                    <li><a href="/signout" style="font-size:11px;">Logout</a></li>
 
                                   <% else %>
-                                  	<li><a href="/signup" style="font-size:11px;">Sign Up</a></li>
-                                  	<li><a href="/signin" style="font-size:11px;">Login</a></li>
+                                    <li><a href="/signup" style="font-size:11px;">Sign Up</a></li>
+                                    <li><a href="/signin" style="font-size:11px;">Login</a></li>
                                   <% end %>
+
+                                </div>
                               </ul>
 
                           </div>
@@ -162,18 +547,19 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
                     <div class="row">
                           <div class="col s12">
                           <div class="col s3" >
-                                <div class="col s12 "><img class="logo" src="/logo.png"  ></div>
+                                <div class="col s12 "><img class="logo" src="/images/logo.png"></div>
                           </div>
                               <div class="col s6">
-                              <form>
-                                  <input type="text" name="search" id="search_form" placeholder="Search..">
-                              </form>
-                              <div id="search_results">
-    
-                              </div>
+                                <form action="/search/result" method="get" id="search_form">
+                                    <input type="image" id="search_button" name="search" src="/images/search_icon.png">
+                                    <input type="text" id="search_input" name="search" placeholder="Search.." autocomplete="off">
+                                </form>
+                                <div id="search_results">
+                                  
+                                </div>
                               </div>
                               <div class="col s3">
-                                 <a href="/cart" class="waves-effect white black-text btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i><b> &nbsp;cart</b></a>
+                                 <a href="/cart" class="waves-effect amber white-text btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i><b> &nbsp;cart</b></a>
                               </div>
                           </div>
                     </div>
@@ -182,125 +568,139 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
                   <div class="row">
                         <div class="col s12">
                         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                                  <li><a class="dropdown-button" href="#!" data-activates="dropdown1" style="font-size:17px;"><b>ELECTRONICS</b></a></li>
-                                  <li><a class="dropdown-button" href="#!" data-activates="dropdown2" style="font-size:17px;"><b>APPLIANCES</b></a></li>
-                                  <li><a class="dropdown-button" href="#!" data-activates="dropdown3" style="font-size:17px;"><b>MEN</b></a></li>
-                                  <li><a class="dropdown-button" href="#!" data-activates="dropdown4" style="font-size:17px;"><b>WOMEN</b></a></li>
-                                  <li><a class="dropdown-button" href="#!" data-activates="dropdown5" style="font-size:17px;"><b>KIDS</b></a></li>
-                                  <li><a class="dropdown-button" href="#!" data-activates="dropdown6" style="font-size:17px;"><b>FURNITURE</b></a></li>
-                                  <li><a class="dropdown-button" href="#!" data-activates="dropdown7" style="font-size:17px;"><b>BOOKS</b></a></li>
-                                   <li><a class="dropdown-button" href="#!" data-activates="dropdown1" style="font-size:17px;"><b>OTHERS</b></a></li>
+                             <ul id="nav-mobile" class="center hide-on-med-and-down" >
+                                  <li><a class="dropdown-button" href="#!" data-activates="elect" data-beloworigin="true" style="font-size:17px; "><b>ELECTRONICS</b></a></li>
+                                  <li><a class="dropdown-button" href="#!" data-activates="appliances" data-beloworigin="true" style="font-size:17px;"><b>APPLIANCES</b></a></li>
+                                  <li><a class="dropdown-button" href="#!" data-activates="men" style="font-size:17px;"><b>MEN</b></a></li>
+                                  <li><a class="dropdown-button" href="#!" data-activates="women" style="font-size:17px;"><b>WOMEN</b></a></li>
+                                  <li><a class="dropdown-button" href="#!" data-activates="kids" style="font-size:17px;"><b>BABY & KIDS</b></a></li>
+                                  <li><a class="dropdown-button" href="#!" data-activates="books" style="font-size:17px;"><b>BOOKS</b></a></li>
+                                  <li><a class="dropdown-button" href="#!" data-activates="furn" style="font-size:17px;"><b>FURNITURE</b></a></li>
+                                  
+                                  <li><a href="#!"  style="font-size:17px;"><b> MORE</b></a></li>
+                                   
                               </ul>
                               <ul class="side-nav" id="mobile-demo">
                                   <li class="no-padding">
-                                      <ul class="collapsible collapsible-accordion">
+                                      <ul class="collapsible" data-collapsible="accordion" >
                                           <li>
                                               <a class="collapsible-header" style="font-size:14px;">ELECTRONICS<i class="material-icons">arrow_drop_down</i></a>
                                               <div class="collapsible-body">
                                               <ul >
-                                                    <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-                                                    <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-                                                    <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Mobiles</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Mobile Accessories</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Laptops</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Computer Peripherals</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Computer Accessories</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Tablets</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Wearables</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Home entertainment</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Television</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Camera</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Network Components</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Others</a></li>
                                               </ul>
                                               </div>
-                                          </li>
-                                      </ul>
-                                  </li>
-                                  <li class="no-padding">
-                                      <ul class="collapsible collapsible-accordion">
+                                        </li>
+                                  
                                           <li>
                                               <a class="collapsible-header" style="font-size:14px;">APPLIANCES<i class="material-icons">arrow_drop_down</i></a>
                                               <div class="collapsible-body">
-                                              <ul >
-                                                    <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-                                                    <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-                                                    <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+                                              <ul>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Washing Machine</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Refrigerators</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Air Conditioners</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Geysers</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Kitchen Appliances</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Small Appliances</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Others</a></li>
                                               </ul>
                                               </div>
                                           </li>
-                                      </ul>
-                                  </li>
-                                  <li class="no-padding">
-                                      <ul class="collapsible collapsible-accordion">
+                                      
+                                  
                                           <li>
                                               <a class="collapsible-header" style="font-size:14px;">MEN<i class="material-icons">arrow_drop_down</i></a>
                                               <div class="collapsible-body">
                                               <ul >
-                                                    <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-                                                    <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-                                                    <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Footwear</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Clothing</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Watches</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Accessories</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Personal Care Appliances</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Men's Grooming</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Others</a></li>
                                               </ul>
                                               </div>
                                           </li>
-                                      </ul>
-                                  </li>
-                                  <li class="no-padding">
-                                      <ul class="collapsible collapsible-accordion">
+                                     
+                                  
                                           <li>
                                               <a class="collapsible-header" style="font-size:14px;">WOMEN<i class="material-icons">arrow_drop_down</i></a>
                                               <div class="collapsible-body">
                                               <ul >
-                                                    <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-                                                    <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-                                                    <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Footwear</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Clothing</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Watches</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Accessories</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Personal Care Appliances</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Beauty & Grooming</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Jewellery</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Others</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">three</a></li>
                                               </ul>
                                               </div>
                                           </li>
-                                      </ul>
-                                  </li>
-                                  <li class="no-padding">
-                                      <ul class="collapsible collapsible-accordion">
+                                      
                                           <li>
                                               <a class="collapsible-header" style="font-size:14px;">KIDS<i class="material-icons">arrow_drop_down</i></a>
                                               <div class="collapsible-body">
                                               <ul >
-                                                    <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-                                                    <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-                                                    <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Kid's Clothing</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Kid's Footwear</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">School supplies</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Toys</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Baby Care</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Others</a></li>
                                               </ul>
                                               </div>
                                           </li>
-                                      </ul>
-                                  </li>
-                                  <li class="no-padding">
-                                      <ul class="collapsible collapsible-accordion">
+                                    
                                           <li>
                                               <a class="collapsible-header" style="font-size:14px;">FURNITURE<i class="material-icons">arrow_drop_down</i></a>
                                               <div class="collapsible-body">
                                               <ul >
-                                                    <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-                                                    <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-                                                    <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Kitchen & Dining</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Furniture</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">House & Hardware</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Home Decor</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Lighting</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Others</a></li>
                                               </ul>
                                               </div>
                                           </li>
-                                      </ul>
-                                  </li>
-                                  <li class="no-padding">
-                                      <ul class="collapsible collapsible-accordion">
+                                      
                                           <li>
-                                              <a class="collapsible-header" style="font-size:14px;">BOOKS<i class="material-icons">arrow_drop_down</i></a>
+                                              <a class="collapsible-header" style="font-size:14px;">BOOKS & More<i class="material-icons">arrow_drop_down</i></a>
                                               <div class="collapsible-body">
                                               <ul >
-                                                    <li><a class="blue-text text-lighten-1" href="#!">one</a></li>
-                                                    <li><a  class="blue-text text-lighten-1" href="#!">two</a></li>
-                                                    <li><a class="blue-text text-lighten-1" href="#!">three</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Novels</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Stationary</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Music</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Movies & TV Shows</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Musical Instruments</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Automobiles</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Sports</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Fitness Accessories</a></li>
+                                                    <li><a class="black-text text-lighten-1" href="#!">Others</a></li>
                                               </ul>
                                               </div>
                                           </li>
-                                      </ul>
+                                      
                                   </li>
-                                  <li><a href="/login" style="font-size:14px;">OTHERS</a></li>
-      </ul>
-                             <!-- <div class="col s2"><a class="dropdown-button" href="#!" data-activates="dropdown1"></a></div>
-                              <div class="col s2"><a class="dropdown-button" href="#!" data-activates="dropdown2"></a></div>
-                              <div class="col s1"><a class="dropdown-button" href="#!" data-activates="dropdown3"></a></div>
-                              <div class="col s2"><a class="dropdown-button" href="#!" data-activates="dropdown4"></a></div>
-                              <div class="col s1"><a class="dropdown-button" href="#!" data-activates="dropdown5"></a></div>
-                              <div class="col s2"><a class="dropdown-button" href="#!" data-activates="dropdown6"></a></div>
-                              <div class="col s1"><a class="dropdown-button" href="#!" data-activates="dropdown7"></a></div>
-                              <div class="col s1">OTHERS</a></div>-->
+                                  
+                            </ul>
+                             
                         </div>
                   </div>
               <!--</div>-->
@@ -308,13 +708,15 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
           </div>
       </nav>
     </div>
-    
+  
     <% if flash[:notice] %>
       <% notice = flash[:notice] %>
     	<script type="text/javascript">
         noty({
           text: '<%= notice %>', 
-          type: 'alert'
+          type: 'alert',
+          layout:'topCenter',
+          timeout :5000
         });
       </script>
     <% end %>
@@ -348,7 +750,7 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
                      
                   </ul>
               </div>
-              <div class="col l5  s12">
+              <div class="col l5 s12">
                   <div class="grey-text text-lighten-3"><h5 class="cyan-text text-lighten-4" style="font-size:20px;"><b>ABOUT US</b></h5>
                       <p> Shopclix is an ecommerce website where buyer and seller can contact directly only for better mutual understanding. We provide you a complete help of getting you online and sell your products. Our focus is Building an Online Brand for every Indian Retailer and get them on the cloud. <a href="">Read More</a></p>
                   </div>
@@ -363,7 +765,7 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
                       © SHOPCLIX
                       
                   <div class="right">
-                         <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+                          <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
                           <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
                           <i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i>
                   </div>
@@ -373,21 +775,16 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
      </div>
   </footer>
   
+<!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.js"></script> 
+<script src="https://use.fontawesome.com/e782fdb025.js"></script>
+
+
 <script type="text/javascript">
-    $('.dropdown-button').dropdown({
-          inDuration: 300,
-          outDuration: 225,
-          constrain_width: false, // Does not change width of dropdown to that of the activator
-          hover: true, // Activate on hover
-          gutter: 0, // Spacing from edge
-          belowOrigin: true, // Displays dropdown below the button
-          alignment: 'left' // Displays dropdown with edge aligned to the left of button
-        }
-      );
-    var search_form = document.getElementById('search_form');
+  var search_form = document.getElementById('search_input');
   if(search_form)
-  { search_form.addEventListener('keydown', function(){
+  { search_form.addEventListener('keyup', function(){
       console.log('hello');
       var search_results = document.getElementById('search_results')
       if(search_form.value.length > 0)
@@ -454,6 +851,41 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
       
     })
   }
+
+  $('.carousel.carousel-slider').carousel({fullWidth: true, padding:100},setTimeout(autoplay, 3500));
+  function autoplay() {
+    $('.carousel').carousel('next');
+    setTimeout(autoplay, 3500);
+     }
+     $(document).ready(function(){$('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true // Choose whether you can drag to open on touch screens
+   });
+    });
+     $(document).ready(function(){
+      $('.slider').slider();
+    });
+     $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });
+     $(document).ready(function(){
+          $('.dropdown-button2').dropdown({
+              inDuration: 300,
+              outDuration: 225,
+              constrain_width: false, 
+              hover: true, // Activate on hover
+              gutter: ($('.dropdown-content').width())/1.8, // Spacing from edge
+              belowOrigin: false, // Displays dropdown below the button
+              alignment: 'left' // Displays dropdown with edge aligned to the left of button
+            }
+          );
+         
+        });   
+        
 </script>
 </body>
 </html>

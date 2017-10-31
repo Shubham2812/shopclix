@@ -1,14 +1,26 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
   <html lang='en-US'>
+ <style type="text/css"> 
+ .login-form
+   {
+  background:#fff;
+  width:40%;
+  margin:9% auto 4% auto;
+  padding: 20px;
+  /*position: relative;*/
+}
 
-    <body>
-      <div class="container">
+</style>
+
+    <body class="light-blue lighten-5">
+      <div class="container login-form ">
+
         <div class="row">
            <h2 class="col s12">LOGIN</h2>
            <form class="col s12" method="POST" action='/signin'>
 
              <div class="row">
-             <div class="input-field col s12 disabled selected">
+             <div class="input-field col s12 disabled selected" >
                 <select name="role" required="true">
                   <option value="customer">Login as a Customer</option>
                   <option value="seller">Login as a Seller</option>
@@ -18,7 +30,7 @@
             </div>
 
              <div class="row">
-               <div class="input-field col s6">
+               <div class="input-field col s12">
                  <input id="email" type="email" class="validate" name="email" required="true">
                 <label for="email" data-error="wrong" data-success="right">Email</label>
                </div>
@@ -26,14 +38,14 @@
 
 
              <div class="row">
-               <div class="input-field col s6">
+               <div class="input-field col s12">
                  <input id="password" type="password" class="validate" name="password" required="true">
                  <label for="password">Password</label>
                </div>
              </div>
 
              <div class="row">
-               <div class="input-field col s6">
+               <div class="input-field col s12">
                  <input id="submit" type="submit" value="Login">
                </div>
              </div>

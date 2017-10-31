@@ -1,18 +1,24 @@
-<div class="card small">
+<div class="col m4 s12">
+<div class="card medium">
           <div class="card-image">
               <img src="<%= store.avatar %>">
             </div>
             <div class="card-content">
               <p> <%= store.name %> </p>
               <p> <%= store.category %> </p>
-
-              <a href="/store/edit/<%= store.id %>" class="btn-floating btn-large red">
-                <i class="large material-icons">mode_edit</i>
-              </a>
-            </div>
-            <div class="card-action">
-              <a href="/store/<%= store.id %>/products">Products</a>
+<div class="card-action">
+              <a href="/stores/show/<%= store.id %>">View Products</a>
               <i class="material-icons">thumb_up</i>
               <i class="material-icons">thumb_down</i>
-            </div>
+              <br>
+              <a href="/store/edit/<%= store.id %>" class="btn-floating btn-tiny red">
+                <i class="tiny material-icons">mode_edit</i>
+                </a>
+                <a href="/store/delete/<%= store.id %>" class="btn-floating btn-tiny red">
+                <i class="tiny material-icons">delete</i>
+                </a>
+            
+          </div>
+</div>
+</div>
 </div>

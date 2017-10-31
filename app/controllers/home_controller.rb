@@ -2,11 +2,13 @@ class HomeController < ApplicationController
   def index
     @products = Product.all
     @electronics = Store.where(category: 1)
-    @mens = Store.where(category: 2)
-    @women = Store.where(category: 3)
-    @kids = Store.where(category: 4)
-    @books = Store.where(category: 5)
-    @furniture = Store.where(category: 6)
+    @appliances = Store.where(category: 2)
+    @men = Store.where(category: 3)
+    @women = Store.where(category: 4)
+    @kids = Store.where(category: 5)
+    @books = Store.where(category: 6)
+    @furniture = Store.where(category: 7)
+    @others = Store.where(category: 8)
     
   end
 
@@ -64,5 +66,22 @@ class HomeController < ApplicationController
     # byebug
     items = Product.where("name like '%#{params[:search]}%' ") + Store.where("name like '%#{params[:search]}%' ")
     render json: items
+  end
+
+  def search_result
+    # byebug
+    product = Product.find_by(name: params[:search])
+    store = Store.find_by(name: params[:search])
+    
+    if product
+      path = '/products/show/' + product.id.to_s
+      return redirect_to path
+    elsif store
+      path = '/stores/show/' + store.id.to_s
+      return redirect_to path
+    else
+      flash[:notice] = "No Match Found"
+      return redirect_to '/'
+    end
   end
 end

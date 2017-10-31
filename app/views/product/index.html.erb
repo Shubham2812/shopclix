@@ -5,18 +5,32 @@
 	<style>
 		.product_outer{
 	    	margin: auto;
-	     	width: 60%;
+	     	
+     	}
+
+     	.empty_product{
+     		height: 200px;
+     		width: 200px;
+     		border: 2px dashed black;
+     		background-color: red;
      	}
 
 	</style>
 </head>
 <body>
 	<br>
-	<%= link_to 'Add Product', '/product/add' %>
     <div class="product_outer">
+    	<div class="row">
 		<% @products.each do |product| %>
 			<%= render 'product', product: product %>
 		<% end %>
+
+		  <div class="col m4 s12">
+		    <div class="card medium add_product">
+				<a href="/product/add"> <img src="/images/add.png"> </a>
+            
+      	</div></div>
+	</div>
 	</div>
 </body>
 </html>
